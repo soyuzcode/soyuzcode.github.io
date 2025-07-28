@@ -20,6 +20,7 @@ window.addEventListener("DOMContentLoaded", function() {
     if (param) {
         var modelViewer = document.querySelector('model-viewer');
         modelViewer.src = "https://soyuzcode.github.io/models/" + "model_" + param + ".glb";
+        console.log("Cargo model loaded: " + modelViewer.src);
     } else {
         console.error("No model URL provided in the query string.");
     }
