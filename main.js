@@ -1,18 +1,11 @@
 function getParams(){
 
     // Get the query string from the URL, only expected to have one parameter
-    var queryString = window.location.search.substring(1);
-    var param = queryString.split('?');
-
-    // If the parameter exists, return it
-    if (param.length > 0) {
-        return param[0];
-    } else {
-        return null;
-    }
+    var param = new URLSearchParams(window.location.search);
+    return param.get("value");
 }
 
-window.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("DOMContentLoaded", () => {
     // Get the parameter from the URL
     var param = getParams();
 
